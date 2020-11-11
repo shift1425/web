@@ -8,8 +8,9 @@ import SidebarDashboard from "../../components/SidebarDashboard";
 
 
 function ForgotPassword() {
-  function handleSubmit() {
-      console.log('ok')
+    const history = useHistory();
+    function handleSubmit() {
+      history.push('/reset-password')
   }
   const { goBack } = useHistory();
     return (
@@ -30,7 +31,7 @@ function ForgotPassword() {
                             <input name="email" type="email" required/>
                         </div>
 
-                        <button className="dashboard-button animate-up" type="submit">Entrar</button>
+                        <button className="dashboard-button animate-up" type="submit">Enviar</button>
                     </fieldset>
                     
                 </form>
