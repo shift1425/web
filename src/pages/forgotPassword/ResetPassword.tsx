@@ -5,7 +5,6 @@ import { FiArrowLeft } from 'react-icons/fi'
 import '../../styles/pages/dashboard.css';
 import '../../styles/components/animations.css';
 import SidebarDashboard from "../../components/SidebarDashboard";
-import { type } from 'os';
 
 
 function ResetPassword() {
@@ -20,12 +19,31 @@ function ResetPassword() {
       if(input === "password") {
         const input = document.getElementById("password")
         input?.setAttribute("type","text")
+        document.getElementById("seepassword")?.setAttribute("class","notVisible")
       }else {
         const input = document.getElementById("password")
         input?.setAttribute("type","password")
+        document.getElementById("seepassword")?.setAttribute("class","")
       }
 
   }
+
+  function handleVisiblePassword2() {
+    const input = document.getElementById("password2")?.getAttribute('type');
+    console.log(input)
+
+    if(input === "password") {
+      const input = document.getElementById("password2")
+      input?.setAttribute("type","text")
+      document.getElementById("seepassword2")?.setAttribute("class","notVisible")
+    }else {
+      const input = document.getElementById("password2")
+      input?.setAttribute("type","password")
+      document.getElementById("seepassword2")?.setAttribute("class","")
+    }
+
+}
+
 
   const { goBack } = useHistory();
     return (
@@ -45,7 +63,7 @@ function ResetPassword() {
                             <label htmlFor="email">Nova senha: </label>
                             <div className="input">
                                 <input id="password" name="password" type="password" required />
-                                <span onClick={handleVisiblePassword}></span>
+                                <span id="seepassword" onClick={handleVisiblePassword}></span>
                             </div>
                         </div>
 
@@ -53,7 +71,7 @@ function ResetPassword() {
                             <label htmlFor="password">Repetir senha: </label>
                             <div className="input">
                                 <input id="password2" name="password" type="password" required />
-                                <span onClick={handleVisiblePassword}></span>
+                                <span id="seepassword2" onClick={handleVisiblePassword2}></span>
                             </div>
                         </div>
 
