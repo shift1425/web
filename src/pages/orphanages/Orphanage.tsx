@@ -4,10 +4,10 @@ import { FiClock, FiInfo} from "react-icons/fi";
 import { Map, Marker, TileLayer } from "react-leaflet";
 import { useParams } from 'react-router-dom'
 
-import '../styles/pages/orphanage.css';
-import Sidebar from "../components/Sidebar";
-import mapIcon from "../utils/mapIcon";
-import api from "../services/api";
+import '../../styles/pages/orphanage.css';
+import Sidebar from "../../components/Sidebar";
+import mapIcon from "../../utils/mapIcon";
+import api from "../../services/api";
 
 interface Orphanage {
   latitude: number;
@@ -116,15 +116,15 @@ export default function Orphanage() {
                 <div className="open-on-weekends">
                 <FiInfo size={32} color="#39CC83" />
                 Atendemos <br />
-                fim de semana
+                aos finais de semana!
               </div>
 
               ) : (
 
                 <div className="open-on-weekends dont-open">
                 <FiInfo size={32} color="#FF669D" />
-                Atendemos <br />
-                fim de semana
+                Não atendemos <br />
+                aos finais de semana!
               </div>
 
               )
