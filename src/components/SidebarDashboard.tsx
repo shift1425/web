@@ -1,24 +1,26 @@
 import React from 'react';
+import { FiArrowLeft } from 'react-icons/fi';
+import { useHistory } from 'react-router-dom';
 
-import logotipo from '../images/logotipo.svg';
+import mapMarkerImg from '../images/map-marker.svg';
 
-import '../styles/components/sidebar-dashboard.css'
+import '../styles/components/sidebar.css'
 import '../styles/components/animations.css';
-import GetUserPosition from './GetUserPosition';
 
 
-export default function SidebarDashboard() {
-  GetUserPosition();
-  const city = localStorage.getItem('city');
-  const state = localStorage.getItem('state');
+export default function Sidebar() {
+
+    const { goBack } = useHistory();
+
     return (
         <aside className="app-sidebar animate-sidebar">
-          <img className="logotipo animate-sidebar" src={logotipo} alt="Happy" />
-          
-          <div className="location animate-sidebar">
-            <strong>{city}</strong>
-            <span>{state}</span>
-          </div>
+        <img src={mapMarkerImg} alt="Happy" />
+
+        <footer>
+          <button className="animate-sidebar" type="button" onClick={goBack}>
+            <FiArrowLeft size={24} color="#FFF" />
+          </button>
+        </footer>
       </aside>
     )
 }

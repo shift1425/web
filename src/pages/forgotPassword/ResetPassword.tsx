@@ -4,7 +4,7 @@ import { FiArrowLeft } from 'react-icons/fi'
 
 import '../../styles/pages/dashboard.css';
 import '../../styles/components/animations.css';
-import SidebarDashboard from "../../components/SidebarDashboard";
+import SidebarDashboard from "../../components/SidebarLogin";
 
 
 function ResetPassword() {
@@ -14,7 +14,6 @@ function ResetPassword() {
 
   function handleVisiblePassword() {
       const input = document.getElementById("password")?.getAttribute('type');
-      console.log(input)
 
       if(input === "password") {
         const input = document.getElementById("password")
@@ -30,7 +29,6 @@ function ResetPassword() {
 
   function handleVisiblePassword2() {
     const input = document.getElementById("password2")?.getAttribute('type');
-    console.log(input)
 
     if(input === "password") {
       const input = document.getElementById("password2")
